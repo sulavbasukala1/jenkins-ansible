@@ -1,0 +1,19 @@
+---
+- name: setup apache and pull code
+  hosts: ansible-host
+  become: true
+  tasks:
+    - name: install apache2
+      apt:
+         name: apache2
+         state: present
+    - name: code pull from github
+      git:
+          repo: https://github.com/sulavbasukala1/jenkins-ansible.git
+          dest: ./var/www/html/
+      
+
+
+    
+  
+
